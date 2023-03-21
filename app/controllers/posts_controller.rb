@@ -22,6 +22,10 @@ class PostsController < ApplicationController
 
   private
     def require_login
+      unless session[:user_id]
+        flash[:error] = "You must be logged in!"
+        redirect_to new_session_path
+      end
     end
 
     def post_params
