@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :username, :email, :password, presence: true
 
-  def authenticate(password)
-    password == @password
+  def authenticate?(pwd)
+    password == pwd
   end
 end
