@@ -4,8 +4,4 @@ class User < ApplicationRecord
 
   validates :username, :email, :password, :password_confirmation, presence: true
   validates :username, :email, uniqueness: true
-
-  def authenticate?(pwd)
-    password == pwd
-  end
 end
