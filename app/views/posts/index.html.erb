@@ -1,6 +1,6 @@
 <p>
-    <% if session[:user_id] %>
-        Logged in as <%= User.find(session[:user_id]).username %>
+    <% if logged_in? %>
+        Logged in as <%= current_user.username %>
         <%= link_to "Logout", session_path(session.id), data: {
                                                                 turbo_method: :delete,
                                                                 turbo_confirm: "Are you sure?"
